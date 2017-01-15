@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<div class="wrapper">
+
+            <aside class="main-sidebar">
+                <ul class="sidebar-menu">
+                	<li class="header">UTILITIES</li>
+                	<li class="treeview">
+                		<a href="/dashboard/activities/">
+                        <i class="fa fa-trophy"></i> 
+                        <span>Activities</span> 
+                      	</a>
+                	</li>
+
+                    <li class="treeview">
+                        <a href="/dashboard/activities-timeline/">
+                        <i class="fa fa-hourglass-2"></i>
+                        <span>Activities timeline</span>
+                        </a>
+                	</li>
+
+                	<li class="treeview">
+                		<a href="/dashboard/monthly-summary/">
+                		<i class="fa fa-files-o"></i>
+                		<span>Monthly summary</span>
+                		</a>
+                	</li>
+
+                    <li class="treeview">
+                        <a href="/dashboard/activities-visuals/">
+                        <i class="fa fa-bar-chart-o"></i>
+                        <span>Visuals</span>
+                        </a>
+                    </li>    
+
+                	<li class="header">Help</li>
+                	
+                	<li class="treeview">
+                		<a href="#">
+                		<i class="fa fa-book"></i>
+                		<span>Documentation</span>
+                		</a>
+                	</li>	
+                </ul>
+            </aside>
+         	
+</div>
+{% endblock %}

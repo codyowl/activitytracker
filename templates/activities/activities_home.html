@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+{% include "headernavbar.html" %}
+{% include "menu.html" %}
+<body class="skin-blue sidebar-mini wysihtml5-supported">
+	<div style="min-height: 916px;" class="content-wrapper">
+		<section class="content-header">
+        	<h1>
+            	Activities
+            </h1>
+          	<ol class="breadcrumb">
+            	<li><a href="{% url "dashboard_home" %}"><i class="fa fa-dashboard"></i> Home</a></li>
+            	<li class="active">Activities</li>
+            </ol>
+        </section>
+
+        <section class="content">
+        	<div class="row">
+        		<div class="col-xs-12">
+        			<div class="box">
+        				<form action='.' method='post' name='backupentryfrm'>
+                            {% csrf_token %}
+                            <div class="box-header">
+								<center><h3>Add your activity</h3></center>
+								 
+                            </div>
+                            <div class="box-body">
+                                <div class="mysqltable" id="mysqltable">
+                                    <table class="table table-bordered">
+                                        <tbody>
+                                            
+
+                                            <tr>
+                                                <th>what one thing you have progressed today ?</th>
+                                                <td>{{ form.details }}</td>
+                                            </tr>
+
+                                            <tr>
+                                                <th>What type of activity it is?</th>
+                                                <td>{{ form.activity_category }}</td>
+                                            </tr>
+
+                                            <tr>
+                                                <th>Progression status</th>
+                                                <td>{{ form.status }}</td>
+                                            </tr>
+
+                                            <!-- <tr>
+                                                <th>Date</th>
+
+                                                <td>
+                                                <div class="input-group-addon">
+                        							<i class="fa fa-calendar"></i>
+                        							{{ form.creation_date }}
+                      							</div>
+                                                </td>
+                                                
+                                            </tr> -->
+                                            <th> </th>
+                                                <td><button class="btn btn-block btn-success" id="tbb" >Add Activity</button></td>
+                                            </tr>
+                                               
+                                        </tbody>
+                                    </table>
+
+                                </div>    
+                            </div>
+                        </form>
+        			</div>
+        		</div>
+        	</div>	
+        </section>
+
+	</div>
+</body>
+{% include "footer.html" %}
+{% endblock %}

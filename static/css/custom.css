@@ -1,0 +1,10 @@
+.top-bar {
+	padding: 0rem 20px;
+}
+.page-info{
+	border:1px solid red;
+	margin-top:40px;
+	text-align: center;
+	padding:10px;  
+
+}

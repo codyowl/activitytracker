@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+{% include "headernavbar.html" %}
+{% include "menu.html" %}
+<body class="skin-blue sidebar-mini wysihtml5-supported">
+  <div style="min-height: 916px;" class="content-wrapper">
+  	<section class="content">
+            <div class="callout callout-info">
+              <h4>Hai {{ user.first_name }} !, Welcome to daily Journal ! Please excuse the ui though :P </h4>
+              <p>Go to "Activities" menu on the left to begin</p>
+            </div>
+            
+            
+          </section><!-- /.content -->
+  </div>  
+</body>
+{% endblock %}

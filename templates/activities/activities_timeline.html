@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+{% include "headernavbar.html" %}
+{% include "menu.html" %}
+{% load status_filter %}
+<body class="skin-blue sidebar-mini wysihtml5-supported">
+	<div style="min-height: 916px;" class="content-wrapper">
+		<section class="content-header">
+        	<h1>
+            	Activities Timeline
+            </h1>
+          	<ol class="breadcrumb">
+            	<li><a href="{% url "dashboard_home" %}"><i class="fa fa-dashboard"></i> Home</a></li>
+            	<li class="active">Activities Timeline</li>
+            </ol>
+        </section>
+
+        
+        <section class="content">
+        	<div class="row">
+        		<div class="col-md-12">
+                    
+                    {% if message %}
+                        {% for messages in message %}
+                        <div class="alert alert-danger alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <h4><i class="icon fa fa-ban"></i>{{ messages }}</h4>
+                            </div>
+                        {% endfor %}    
+                    {% endif %}
+        
+        			<ul class="timeline">
+        				{% for activities in activity %}
+        				<li class="time-label">
+        					<span class="bg-aqua">{{ activities.creation_date|date }}</span>
+        				</li>
+        				<li>
+        					<i class="fa fa-mortar-board bg-blue"></i>
+        					<div class="timeline-item">
+        						<span class="time"><i class="fa fa-clock-o"></i>{{ activities.creation_date|time }}</span>
+        						<h3 class="timeline-header"><a href="#">Activity : {{ activities.activity_category }}</a></h3>
+        						<div class="timeline-body">
+        							{{ activities.details }}
+        						</div>
+        						<div class="timeline-footer">
+                      				<a class="btn btn-primary btn-xs">{{ activities.status|status_reporter }}</a>
+                      				<a class="btn btn-danger btn-xs" href="{% url 'activity_delete' activities.id %}">Delete</a>
+                    			</div>
+        					</div>
+        				</li>
+        				{% endfor %}
+        				<!-- Ending the timeline-->
+        				<li>
+                  			<i class="fa fa-clock-o bg-gray"></i>
+                		</li>
+
+        			</ul>
+        		</div>
+        	</div>
+        </section>
+	</div>
+</body>
+{% include "footer.html" %}
+{% endblock %}
