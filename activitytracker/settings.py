@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '=++yhol*$dghpolbn73tnifzx(bqdfk1on5i&8m9*-4!k)=8*k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 
@@ -67,7 +67,7 @@ WSGI_APPLICATION = 'activitytracker.wsgi.application'
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
 #for heroku
-DEBUG = config('DEBUG', default=False, cast=bool)
+# DEBUG = config('DEBUG', default=False, cast=bool)
 DATABASES = {
     'default': dj_database_url.config(
         default=config('DATABASE_URL')
