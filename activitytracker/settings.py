@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -20,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '=++yhol*$dghpolbn73tnifzx(bqdfk1on5i&8m9*-4!k)=8*k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
 TEMPLATE_DEBUG = True
 
@@ -60,14 +63,22 @@ WSGI_APPLICATION = 'activitytracker.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
+#for heroku
+DEBUG = config('DEBUG', default=False, cast=bool)
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'activitytracker',
-        'USER': 'root',
-        'PASSWORD': 'root',
-    }
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'activitytracker',
+#         'USER': 'root',
+#         'PASSWORD': 'root',
+#     }
+# }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
