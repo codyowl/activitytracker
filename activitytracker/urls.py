@@ -6,7 +6,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'activitytracker.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^admin/', include(admin.site.urls)),
+    
     url(r'^$', 'home.views.home', name='home'),
     url(r'^registration/$', 'home.views.register', name='register'),
     url(r'^login/$', 'home.views.user_login', name='user_login'),
@@ -20,5 +20,5 @@ urlpatterns = patterns('',
 
     #visuals
     url(r'^dashboard/activities-visuals/$', 'activities.views.activities_visuals', name='activities_visuals'),
-
+    url(r'^admin/', include(admin.site.urls)),
     )
