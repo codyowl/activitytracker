@@ -29,7 +29,7 @@ SECRET_KEY = '=++yhol*$dghpolbn73tnifzx(bqdfk1on5i&8m9*-4!k)=8*k'
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = [*]
+ALLOWED_HOSTS = ['*']
 # ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
