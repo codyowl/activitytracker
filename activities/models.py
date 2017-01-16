@@ -19,3 +19,5 @@ class Activity(models.Model):
 	def __unicode__(self):
 		return self.activity_category
 
+	
+

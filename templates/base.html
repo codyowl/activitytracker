@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
     <!-- for home page -->
-    
+    <link href="{% static 'plugins/fullcalendar/fullcalendar.min.css' %}" rel="stylesheet">
+    <link href="{% static 'plugins/fullcalendar/fullcalendar.print.css' %}" rel="stylesheet" media="print">
     
          
     <!-- clock picker -->
@@ -35,6 +36,8 @@
 
     
     {% endblock %}
+
+    {% block script %}
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.js' %}"></script>
@@ -64,7 +67,8 @@
     <!-- script for clock picker -->
     <script src="{% static 'clockpicker-gh-pages/dist/bootstrap-clockpicker.min.js' %}"></script>
 
-    
-   
+    <!-- calendar-->
+    <script src="{% static 'plugins/fullcalendar/fullcalendar.min.js' %}"></script>
+    {% endblock %}
   </body>
 </html>

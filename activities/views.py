@@ -49,4 +49,13 @@ def activities_visuals(request, template='activities/activities_visuals.html'):
 
 @login_required
 def monthly_summary(request, template='activities/monthly_summary.html'):
-	return render_to_response(template)	
+	activity = Activity.objects.filter(user=request.user.pk)
+	# events_dict = {}
+	# events_dict['title'] = []
+	# for activities in activity:
+	# 	events_dict['title'].append(str(activities.activity_category))
+	# print events_dict	
+	context = {
+	'activity':activity,
+	}
+	return render_to_response(template, context, context_instance=RequestContext(request))	

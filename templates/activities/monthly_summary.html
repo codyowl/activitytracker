@@ -1,13 +1,34 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% block head %}
+<link href="{% static 'plugins/fullcalendar/fullcalendar.min.css' %}" rel="stylesheet" media="screen">
+<link href="{% static 'plugins/fullcalendar/fullcalendar.print.min.css' %}" rel="stylesheet" media="screen">
+<style>
+
+    body {
+        margin: 40px 10px;
+        padding: 0;
+        font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+        font-size: 14px;
+    }
+
+    #calendar {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+</style>
+{% endblock %}
+
 {% block content %}
 {% include "headernavbar.html" %}
 {% include "menu.html" %}
+
 <body class="skin-blue sidebar-mini wysihtml5-supported">
 	<div style="min-height: 916px;" class="content-wrapper">
 		<section class="content-header">
         	<h1>
-            	Access monthly summary reports of your productivity!
+            	Monthly summary (Still Under Progress ....)
             </h1>
           	<ol class="breadcrumb">
             	<li><a href="{% url "dashboard_home" %}"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -16,11 +37,41 @@
         </section>
 
         <section class="content">
-        	<h1>Under Progress ...... Wait till version 2.0</h1>
+            <div id='calendar'></div>
         </section>
 
-	</div>
-</body>
-{% include "footer.html" %}
 
+    </div>    
+
+{% include "footer.html" %}
 {% endblock %}
+
+{% block script %}
+<script src="{% static 'lib/moment.min.js' %}"></script>
+<script src="{% static 'lib/jquery.min.js' %}"></script>
+<script src="{% static 'plugins/fullcalendar/fullcalendar.min.js' %}"></script>
+<script>
+
+    $(document).ready(function() {
+        {% for activities in activity %}
+        $('#calendar').fullCalendar({
+            defaultDate: '2017-01-12',
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events
+
+            events: [
+                
+                {
+                    title: '{{activities.activity_category}}',
+                    start: '{{ activities.creation_date|date:"Y" }}-{{ activities.creation_date|date:"m" }}-{{ activities.creation_date|date:"d" }}',
+                    end: '{{ activities.creation_date|date:"Y" }}-{{ activities.creation_date|date:"m" }}-{{ activities.creation_date|date:"d" }}'
+                },
+                
+            ]
+        });
+        {% endfor %}
+    });
+
+</script>
+{% endblock %}
+
