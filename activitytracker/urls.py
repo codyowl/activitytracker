@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^dashboard/activities/$', 'activities.views.activities_home', name='activities_home'),
     url(r'^dashboard/activities/delete/(?P<id>\d+)/$', 'activities.views.activity_delete', name='activity_delete'),
     url(r'^dashboard/activities-timeline/$', 'activities.views.activities_timeline', name='activities_timeline'),
+    url(r'^dashboard/activities-summary/$', 'activities.views.activities_summary', name='activities_summary'),
 	#monthly summary
     url(r'^dashboard/monthly-summary/$', 'activities.views.monthly_summary', name='monthly_summary'),
 

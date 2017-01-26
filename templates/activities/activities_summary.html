@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/reset.css' %}" media="screen"> CSS reset
+<link rel="stylesheet" href="{% static 'css/style.css' %}" media="screen"> <!-- Resource style -->
+{% endblock %}
+
+{% block content %}
+{% include "headernavbar.html" %}
+{% include "menu.html" %}
+
+<body class="skin-blue sidebar-mini wysihtml5-supported">
+	<div style="min-height: 916px;" class="content-wrapper">
+		<section class="content-header">
+        	<h1>
+            	Monthly summary (Still Under Progress ....)
+            </h1>
+          	<ol class="breadcrumb">
+            	<li><a href="{% url "dashboard_home" %}"><i class="fa fa-dashboard"></i> Home</a></li>
+            	<li class="active">Monthly summary</li>
+            </ol>
+        </section>
+
+        <section class="content">
+            <ul class="cd-items cd-container">
+                <li class="cd-item">
+                    <img src="img/item-1.jpg" alt="Item Preview">
+                    <a href="#0" class="cd-trigger">Quick View</a>
+                </li> <!-- cd-item -->
+
+                <li class="cd-item">
+                    <img src="img/item-1.jpg" alt="Item Preview">
+                    <a href="#0" class="cd-trigger">Quick View</a>
+                </li> <!-- cd-item -->
+
+                <li class="cd-item">
+                    <img src="img/item-1.jpg" alt="Item Preview">
+                    <a href="#0" class="cd-trigger">Quick View</a>
+                </li> <!-- cd-item -->
+
+                <li class="cd-item">
+                    <img src="img/item-1.jpg" alt="Item Preview">
+                    <a href="#0" class="cd-trigger">Quick View</a>
+                </li> <!-- cd-item -->
+
+                <li class="cd-item">
+                    <img src="img/item-1.jpg" alt="Item Preview">
+                    <a href="#0" class="cd-trigger">Quick View</a>
+                </li> <!-- cd-item -->
+
+                <li class="cd-item">
+                    <img src="img/item-1.jpg" alt="Item Preview">
+                    <a href="#0" class="cd-trigger">Quick View</a>
+                </li> <!-- cd-item -->
+
+                <li class="cd-item">
+                    <img src="img/item-1.jpg" alt="Item Preview">
+                    <a href="#0" class="cd-trigger">Quick View</a>
+                </li> <!-- cd-item -->
+
+                <li class="cd-item">
+                    <img src="img/item-1.jpg" alt="Item Preview">
+                    <a href="#0" class="cd-trigger">Quick View</a>
+                </li> <!-- cd-item -->
+
+                <li class="cd-item">
+                    <img src="img/item-1.jpg" alt="Item Preview">
+                    <a href="#0" class="cd-trigger">Quick View</a>
+                </li> <!-- cd-item -->
+
+                <li class="cd-item">
+                    <img src="img/item-1.jpg" alt="Item Preview">
+                    <a href="#0" class="cd-trigger">Quick View</a>
+                </li> <!-- cd-item -->
+
+                <li class="cd-item">
+                    <img src="img/item-1.jpg" alt="Item Preview">
+                    <a href="#0" class="cd-trigger">Quick View</a>
+                </li> <!-- cd-item -->
+
+                <li class="cd-item">
+                    <img src="img/item-1.jpg" alt="Item Preview">
+                    <a href="#0" class="cd-trigger">Quick View</a>
+                </li> <!-- cd-item -->
+            </ul> <!-- cd-items -->
+        </section>
+
+
+    </div>    
+
+{% include "footer.html" %}
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'js/modernizr.js' %}"></script>
+<script src="{% static 'js/velocity.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script> <!-- Resource jQuery -->
+
+{% endblock %}
+

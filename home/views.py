@@ -74,7 +74,7 @@ def user_login(request, template='home/login.html'):
 				login(request, driver)
 				return HttpResponseRedirect('/dashboard')
 			else:
-				msg.append("Invalid login details provided")
+				msg.append("OOPS !! Invalid login details provided")
 				return render_to_response(template, {'form': form, 'errors':msg}, context_instance=RequestContext(request))
 		
 		else:

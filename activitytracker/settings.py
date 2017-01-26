@@ -10,8 +10,8 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-import dj_database_url
-from decouple import Csv, config
+# import dj_database_url
+# from decouple import Csv, config
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -29,8 +29,8 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-# ALLOWED_HOSTS = [ ]
+# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [ ]
 # ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
@@ -69,20 +69,20 @@ WSGI_APPLICATION = 'activitytracker.wsgi.application'
 
 #for heroku
 # DEBUG = config('DEBUG', default=False, cast=bool)
-DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
-}
-
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'activitytracker',
-#         'USER': 'root',
-#         'PASSWORD': 'root',
-#     }
+#     'default': dj_database_url.config(
+#         default=config('DATABASE_URL')
+#     )
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'activitytracker',
+        'USER': 'root',
+        'PASSWORD': 'root',
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/

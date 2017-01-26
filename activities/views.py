@@ -38,6 +38,11 @@ def activities_timeline(request, template='activities/activities_timeline.html')
 	return render_to_response(template, {'activity':activity}, context_instance=RequestContext(request))	
 
 @login_required
+def activities_summary(request, template='activities/activities_summary.html'):
+	return render_to_response(template, context_instance=RequestContext(request))
+
+
+@login_required
 def activity_delete(request, id):
 	activity_to_delete = get_object_or_404(Activity, pk=id).delete()
 	messages.error(request, 'Document deleted!')
