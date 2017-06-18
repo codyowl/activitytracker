@@ -1,5 +1,5 @@
 # Activitytracker
-A simple personal activities tracker tool built with django ! completed a book ? done with watching a tutorial series ? went for a long drive ? just use this tool to track your activities and stay productive.
+A simple personal activities tracker tool built with django ! completed a book ? done with watching a tutorial series ? went on a long drive ? just use this tool to track your activities and stay productive.
 
 ### Features in Version 1.0:
   - Activity timeline 
