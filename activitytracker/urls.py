@@ -18,7 +18,10 @@ urlpatterns = patterns('',
     url(r'^dashboard/activities-summary/$', 'activities.views.activities_summary', name='activities_summary'),
 	#monthly summary
     url(r'^dashboard/monthly-summary/$', 'activities.views.monthly_summary', name='monthly_summary'),
-
+    
+    #activities sync
+    url(r'^dashboard/activities-sync/$', 'activities.views.activities_sync', name='activities_sync'),
+     
     #visuals
     url(r'^dashboard/activities-visuals/$', 'activities.views.activities_visuals', name='activities_visuals'),
     url(r'^admin/', include(admin.site.urls)),

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+{% include "headernavbar.html" %}
+{% include "menu.html" %}
+<body class="skin-blue sidebar-mini wysihtml5-supported">
+	<div style="min-height: 916px;" class="content-wrapper">
+		<section class="content-header">
+        	<h1>
+            	Sync your activities from various portals
+            </h1>
+          	<ol class="breadcrumb">
+            	<li><a href="{% url "dashboard_home" %}"><i class="fa fa-dashboard"></i> Home</a></li>
+            	<li class="active">Activities' sync</li>
+            </ol>
+        </section>
+
+        <section class="content">
+        	<h1>Under Progress ...... </h1>
+        </section>
+
+	</div>
+</body>
+{% include "footer.html" %}
+
+{% endblock %}

@@ -64,3 +64,8 @@ def monthly_summary(request, template='activities/monthly_summary.html'):
 	'activity':activity,
 	}
 	return render_to_response(template, context, context_instance=RequestContext(request))	
+
+#activities sync
+@login_required
+def activities_sync(request, template='activities/activities_sync.html'):
+	return render_to_response(template, context_instance=RequestContext(request))
